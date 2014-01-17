@@ -11,17 +11,14 @@ func MonthRange(date time.Time) (startTime time.Time, endTime time.Time) {
 	}
 	endOfJanuary := time.Date(fiscalYear, 1, 31, 0, 0, 0, 0, time.UTC)
 	daysUntilSunday := 7 - endOfJanuary.Weekday()
-	startOfFiscalYear := endOfJanuary.AddDate(0, 0, int(daysUntilSunday))
-	startTime = startOfFiscalYear
-	endTime = startOfFiscalYear
+	startTime = endOfJanuary.AddDate(0, 0, int(daysUntilSunday))
+	endTime = startTime
 
 	month := 1
 	for month < 13 {
 		startTime = endTime
 		endTime = startTime.AddDate(0, 0, calcWeeksInMonth(month)*7)
-		if date.Before(endTime) {
-			return startTime, endTime
-		}
+		if date.Before(endTime) { break }
 		month++
 	}
 	return startTime, endTime
