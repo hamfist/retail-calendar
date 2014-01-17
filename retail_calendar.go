@@ -35,3 +35,4 @@ func calcWeeksInMonth(month int) int {
 		return 4
 	}
 }
+
