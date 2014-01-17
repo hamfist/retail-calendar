@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-func MonthRange(date time.Time) (startTime time.Time, endTime time.Time) {
+func GetBeginningAndEndTimeForFiscalMonth(date time.Time) (startTime time.Time, endTime time.Time) {
 	fiscalYear := date.Year()
 	if date.Month() == 1 {
 		fiscalYear = fiscalYear - 1
