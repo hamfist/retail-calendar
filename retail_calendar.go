@@ -17,7 +17,9 @@ func MonthRange(date time.Time) (startTime time.Time, endTime time.Time) {
 	for month := 1; month < 13; month++ {
 		startTime = endTime
 		endTime = startTime.AddDate(0, 0, calcWeeksInMonth(month)*7)
-		if date.Before(endTime) { break }
+		if date.Before(endTime) {
+			break
+		}
 	}
 	return startTime, endTime
 }
@@ -30,4 +32,3 @@ func calcWeeksInMonth(month int) int {
 		return 4
 	}
 }
-
