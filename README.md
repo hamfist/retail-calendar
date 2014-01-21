@@ -1,7 +1,8 @@
 retail-calendar
 ===============
 
-Library that calculates the current fiscal month.
+Library that calculates the current fiscal month (drawn from
+http://www.nrf.com/modules.php?name=Pages&sp\_id=391)
 
 ```bash
 import "github.com/modcloth-labs/retail-calendar"
